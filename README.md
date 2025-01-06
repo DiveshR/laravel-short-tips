@@ -22,7 +22,8 @@
 
 ## Tip : How to pass dynamic value of options in view from controller
 -  Instead of
-  ```$categories = Category::all();
+  ```
+   $categories = Category::all();
    return view('products', compact('categories'));
 
 //Blade file
@@ -32,7 +33,8 @@
 ```
 
 Pass categories in controller as : 
-```$categories = Category::pluck('id','name');
+```
+ $categories = Category::pluck('id','name');
  return view('products', compact('categories'));
 
 // Blade file
