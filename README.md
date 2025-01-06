@@ -5,8 +5,8 @@
 
  - In view {{ $comment->user->name ?? ‘-‘}}
 
-- Laravel helper {{  optional($comment->user)->name )}}
- - PHP null safe operator {{ $comment->user?->name }}
+- Laravel helper ```{{  optional($comment->user)->name )}}```
+ - PHP null safe operator ```{{ $comment->user?->name }}```
 - In Model for our Comment
   
 ``` public function users():BelongsTo
