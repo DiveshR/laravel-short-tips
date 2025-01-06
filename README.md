@@ -1,6 +1,6 @@
 # laravel-short-tips
 
-## 1. Tips
+## Attempt to read property
 ```Error: Attempt to read property “name” on null```
 
  - In view {{ $comment->user->name ?? ‘-‘}}
@@ -17,4 +17,26 @@
    ->withDefault([
 ’name’ => ’None'
 ])
-}```
+}
+```
+
+## How to pass dynamic value of options in view from controller
+-  Instead of
+  ```$categories = Category::all();
+   returrn view('products', compact('categories'));
+
+//Blade file
+@foreach($categories as $category)
+<option value="{{ $category->id}}">{{ $category->name }}</option>
+@endforeach
+```
+
+Pass categories in controller as : 
+```$categories = Category::pluck('id','name');
+ returrn view('products', compact('categories'));
+
+// Blade file
+@foreach($categories as $id=> $name)
+<option value="{{ $id}}">{{ $name }}</option>
+@endforeach
+```
