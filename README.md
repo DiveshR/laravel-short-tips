@@ -42,3 +42,8 @@ Pass categories in controller as :
 <option value="{{ $id}}">{{ $name }}</option>
 @endforeach
 ```
+## Getting age/time diff in years
+```
+        $date_of_birth = Lead::find(1)->date_of_birth;
+        return $date_of_birth->diff(now())->y;
+```
